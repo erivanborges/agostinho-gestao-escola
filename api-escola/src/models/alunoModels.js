@@ -1,21 +1,27 @@
-const alunos = [
-    {id: 1, nome: 'Ana', email: 'ana@email.com'},
-    {id: 2, nome: 'Carlos', email: 'carlos@email.com'},
-    {id: 3, nome: 'Antonio', email: 'antonio@email.com'}
-]
+var dbConn = require('../../config/db.config.js');
 
-module.exports = {
-    getAll: () => alunos,
-    getById: (id) => alunos.find(a => a.id = Number(id)),
-    save: (dados) => {
-        const novoAluno = {
-            id: alunos.length > 0 ? alunos[alunos.length - 1].id + 1 : 1,
-            nome : dados.nome,
-            email : dados.email
-        };
+var Aluno = function (aluno) {
 
-        alunos.push(novoAluno);
-        
-        return novoAluno;
-    }  
-}
+    this.id_aluno = aluno.id_aluno;
+    this.nome_aluno = aluno.nome_aluno;
+    this.cpf = aluno.cpf;
+    this.data_nascimento = aluno.data_nascimento;
+    this.email = aluno.email;
+    this.endereco = aluno.endereco;
+
+};
+
+// FIND ALL
+Aluno.findAll = function (result) {
+    const sql = `SELECT a.* FROM aluno a`;
+    dbConn.query(sql, function (err, res) {
+        if (err) {
+            console.log("error: ", err);
+            result(null, err);
+        } else {
+            result(null, res);
+        }
+    });
+};
+
+module.exports = Aluno;

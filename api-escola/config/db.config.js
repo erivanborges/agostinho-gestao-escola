@@ -13,3 +13,6 @@ dbConn.connect(
         console.log("Database connected!");
     }
 );
+
+// Lembrar os alunos para exportar em todas as camadas
+module.exports = dbConn;
