@@ -1,0 +1,122 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --background: #f5f7fb;
+    --sidebar: #111827;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --border: #e5e7eb;
+    --white: #ffffff;
+    --success: #16a34a;
+    --danger: #dc2626;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+/*  MENU */
+
+.sidebar {
+    width: 245px;
+    background: var(--background);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 16px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 10px 30px;
+}
+
+.brand-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.brand-name strong,
+.brand-name span {
+    display: block;
+}
+
+.brand-name span {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-top: 3px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.menu-item {
+    color: #d1d5db;
+    text-decoration: none;
+    padding: 13px 14px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: .2s;
+}
+
+.menu-item:hover {
+    background: #1f2937;
+    color: white;
+}
+
+.menu-item.active {
+    background: #1f2937;
+    color: white;
+    border-left: 3px solid var(--primary);
+}
+
+.menu-icon {
+    width: 20px;
+    text-align: center;
+}
+
+.sidebar-footer {
+    margin-top: auto;
+    padding: 15px 10px;
+    color: #9ca3af;
+    border-top: 1px solid #173142;
+}
+
+.sidebar-footer strong,
+.sidebar-footer small {
+    display: block;
+}
+
+.sidebar-footer strong {
+    color: white;
+    margin-bottom: 4px;
+}
+
+.sidebar-footer small {
+    font-size: 11px;
+}
