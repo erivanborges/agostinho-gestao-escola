@@ -1,167 +1,393 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Sistema Gestão Escolar</title>
 
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
+    <title>Dashboard de Alunos</title>
+
+    <link rel="stylesheet"
+          href="assets/css/style.css">
 </head>
+
 <body>
 
-      
     <div class="layout">
-        <!--MENU LATERAL-->
+
+        <!-- MENU LATERAL -->
         <aside class="sidebar">
+
             <div class="brand">
+
                 <div class="brand-icon">
                     SA
                 </div>
+
                 <div class="brand-name">
                     <strong>Sistema</strong>
-                    <strong>Acadêmico</strong>
+                    <span>Acadêmico</span>
                 </div>
+
             </div>
 
+
             <nav class="menu">
-                <a href="" class="menu-item active">
-					
-					<span class="menu-icon">🏠</span>
-					
+
+                <a href="#"
+                   class="menu-item active">
+
+                    <span class="menu-icon">⌂</span>
+
                     Dashboard
+
                 </a>
-                <a href="" class="menu-item">
-				
-					<span class="menu-icon">🧑‍🎓</span>
-					
-                    Aluno
+
+
+                <a href="#"
+                   class="menu-item">
+
+                    <span class="menu-icon">👨‍🎓</span>
+
+                    Alunos
+
                 </a>
+
             </nav>
-			
-			<div class="sidebar-footer">
-				<strong>Front-End</strong>
-				<small>Integração com API REST</small>
-			<div>
-			
+
+
+            <div class="sidebar-footer">
+
+                <strong>Front-end</strong>
+
+                <small>
+                    Integração com API REST
+                </small>
+
+            </div>
+
         </aside>
-		
-		<!-- CONTEUDO PRINCIPAL -->
-		<main class="main-content">
-		
-			<!-- CABECALHO -->
-			<header class="topbar">
-			
-				<div>
-					
-					<span class="breadcrumb">
-						Sistema / Dashboard
-					</span>
-					
-					<h1>
-						Dashboard Aluno
-					</h1>
-				
-				</div>
-				
-				<div class="user">
-				
-					<div class="user-avatar">
-						A
-					</div>
-					
-					<div class="user-info">
-					
-						<strong>
-							Administrador
-						</strong>
-						
-						<small>
-							Úsuário do sistema
-						</small>
-					
-					</div>
-					
-				
-				</div>
-					
-			</header>
-			
-			<!-- CONTEUDO -->
-			
-			<section class="content">
-			
-				<div id="message" class="message hidden">
-				
-				</div>
-				
-				<!-- CARDs -->
-				<div class="card">
-				
-					<div class="card-icon">
-						🧑‍🎓
-					</div>
-					
-					<div>
-						
-						<span>
-							Total de alunos
-						</span>
-						
-						<strong id="totalAluno">
-							0
-						</strong>
-							
-					</div>
-				
-				</div>
-				
-				<!-- NOVOS CADASTRADOS -->
-				<div class="card">
-				
-					<div class="card-icon">
-						🧑‍🎓
-					</div>
-					
-					<div>
-						
-						<span>
-							Novos cadastrados
-						</span>
-						
-						<strong id="novosCadastrados">
-							0
-						</strong>
-							
-					</div>
-				
-				</div>
-				
-				<!-- STATUS DA API -->
-				<div class="card">
-				
-					<div class="card-icon">
-						🧑‍🎓
-					</div>
-					
-					<div>
-						
-						<span>
-							Status da API
-						</span>
-						
-						<strong id="apiStatus">
-							Verificando...
-						</strong>
-							
-					</div>
-				
-				</div>
-			
-			</section>
-		
-		</main>
+
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="main-content">
+
+            <!-- HEADER -->
+            <header class="topbar">
+
+                <div>
+
+                    <span class="breadcrumb">
+                        Sistema / Dashboard
+                    </span>
+
+                    <h1>
+                        Dashboard de Alunos
+                    </h1>
+
+                </div>
+
+
+                <div class="user">
+
+                    <div class="user-avatar">
+                        A
+                    </div>
+
+                    <div class="user-info">
+
+                        <strong>
+                            Administrador
+                        </strong>
+
+                        <small>
+                            Usuário do sistema
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- CONTEÚDO -->
+            <section class="content">
+
+
+                <!-- MENSAGEM -->
+                <div id="message"
+                     class="message hidden">
+                </div>
+
+
+                <!-- CARDS -->
+                <div class="cards">
+
+
+                    <!-- TOTAL -->
+                    <div class="card">
+
+                        <div class="card-icon">
+                            👨‍🎓
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Total de alunos
+                            </span>
+
+                            <strong id="totalAlunos">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- NOVOS -->
+                    <div class="card">
+
+                        <div class="card-icon">
+                            ➕
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Novos cadastros
+                            </span>
+
+                            <strong id="novosCadastros">
+                                0
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- STATUS -->
+                    <div class="card">
+
+                        <div class="card-icon">
+                            ✓
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Status da API
+                            </span>
+
+                            <strong id="apiStatus">
+                                Verificando...
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CABEÇALHO DA TABELA -->
+                <div class="section-header">
+
+                    <div>
+
+                        <h2>
+                            Lista de Alunos
+                        </h2>
+
+                        <p>
+                            Alunos cadastrados no sistema.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="btn btn-primary"
+                        id="btnNovoAluno">
+
+                        + Novo Aluno
+
+                    </button>
+
+                </div>
+
+
+                <!-- TABELA -->
+                <div class="table-container">
+
+
+                    <div class="table-header">
+
+                        <input
+                            type="text"
+                            id="campoBusca"
+                            placeholder="Pesquisar aluno...">
+
+                    </div>
+
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    ID
+                                </th>
+
+                                <th>
+                                    Nome
+                                </th>
+
+                                <th>
+                                    E-mail
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody id="tabelaAlunos">
+                        </tbody>
+
+                    </table>
+
+
+                    <div
+                        id="estadoTabela"
+                        class="empty-state">
+
+                        Carregando alunos...
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </main>
+
     </div>
 
+
+    <!-- MODAL DE CADASTRO -->
+    <div
+        class="modal-overlay hidden"
+        id="modalAluno">
+
+
+        <div class="modal">
+
+
+            <!-- HEADER DO MODAL -->
+            <div class="modal-header">
+
+                <div>
+
+                    <h2>
+                        Cadastrar Aluno
+                    </h2>
+
+                    <p>
+                        Preencha os dados abaixo.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="btn-close"
+                    id="btnFecharModal">
+
+                    &times;
+
+                </button>
+
+            </div>
+
+
+            <!-- FORMULÁRIO -->
+            <form id="formAluno">
+
+
+                <div class="form-group">
+
+                    <label for="nome">
+                        Nome
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        name="nome"
+                        placeholder="Digite o nome do aluno"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Digite o e-mail do aluno"
+                        required>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+
+                    <button
+                        type="button"
+                        class="btn btn-secondary"
+                        id="btnCancelar">
+
+                        Cancelar
+
+                    </button>
+
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                        id="btnSalvar">
+
+                        Cadastrar
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="assets/js/app.js"></script>
+
 </body>
+
 </html>
