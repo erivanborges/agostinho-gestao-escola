@@ -198,15 +198,27 @@ function renderizarTabela(lista) {
         linha.innerHTML = `
 
             <td>
-                ${aluno.id}
+                ${aluno.id_aluno}
             </td>
 
             <td>
-                ${escapeHtml(aluno.nome)}
+                ${escapeHtml(aluno.nome_aluno)}
+            </td>
+
+            <td>
+                ${escapeHtml(aluno.cpf)}
+            </td>
+
+            <td>
+                ${escapeHtml(aluno.data_nascimento)}
             </td>
 
             <td>
                 ${escapeHtml(aluno.email)}
+            </td>
+
+            <td>
+                ${escapeHtml(aluno.endereco)}
             </td>
 
         `;
