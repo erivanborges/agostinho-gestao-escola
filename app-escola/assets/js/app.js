@@ -249,27 +249,30 @@ formAluno.addEventListener(
                 .getElementById('nome')
                 .value
                 .trim();
-
+				
+		const cpf =
+            document
+                .getElementById('cpf')
+                .value
+                .trim();
+				
+		const data_nascimento =
+            document
+                .getElementById('data_nascimento')
+                .value
+                .trim();
 
         const email =
             document
                 .getElementById('email')
                 .value
                 .trim();
-
-
-        // Validação
-
-        if (!nome || !email) {
-
-            mostrarMensagem(
-                'Nome e e-mail são obrigatórios.',
-                'error'
-            );
-
-            return;
-
-        }
+				
+		const endereco =
+            document
+                .getElementById('endereco')
+                .value
+                .trim();
 
 
         const btnSalvar =
@@ -305,11 +308,20 @@ formAluno.addEventListener(
                         body:
                             JSON.stringify(
                                 {
-                                    nome:
+                                    nome_aluno:
                                         nome,
+									
+									cpf:
+                                        cpf,
+									
+									data_nascimento:
+                                        data_nascimento,
 
                                     email:
-                                        email
+                                        email,
+										
+									endereco:
+                                        endereco
                                 }
                             )
 
