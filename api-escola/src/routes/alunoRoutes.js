@@ -6,6 +6,6 @@ const alunoController = require('../controllers/alunoController');
 router.get('/', alunoController.findAll);
 
 //router.get('/:id', alunoController.getAlunosById);
-//router.post('/', alunoController.save);
+router.post('/', alunoController.create);
 
 module.exports = router;

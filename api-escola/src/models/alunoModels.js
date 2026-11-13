@@ -24,4 +24,15 @@ Aluno.findAll = function (result) {
     });
 };
 
+Aluno.create = function(novoAluno, result) {
+       dbConn.query("INSERT INTO aluno SET ?", novoAluno, function(err, res){
+            if (err) {
+                console.log("error: ", err);
+                result(err, null);
+            } else {
+                result(null, res.insertId);
+            }
+       }); 
+};
+
 module.exports = Aluno;
